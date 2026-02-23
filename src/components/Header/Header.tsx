@@ -1,6 +1,7 @@
+import { useFacets } from "../../hooks/useFacets"
 import FacetBar from "../FacetBar/FacetBar"
 import FacetBarSkeleton from "../FacetBar/FacetBarSkeleton"
-import { useFacets } from "../../hooks/useFacets"
+import Alert from "../Alert/Alert"
 import styles from './Header.module.css'
 
 type HeaderProps = {
@@ -16,13 +17,15 @@ const Header = ({
   setHolidayType,
   setProductType
 }: HeaderProps) => {
-  const { facets, facetsLoading } = useFacets()
+  const { facets, facetsLoading, error } = useFacets()
+
   return (
     <div className={styles.headerContainer}>
       <h1 className={styles.headerHeading}>Saga Holidays</h1>
       <div className={styles.facetWrapper}>
-        {facetsLoading && <FacetBarSkeleton />}
-        {!facetsLoading && facets &&
+        {facetsLoading && !error && <FacetBarSkeleton />}
+        {true && <Alert error={error} />}
+        {!facetsLoading && !error && facets &&
           <FacetBar
             facets={facets}
             selectedHolidayType={holidayType}

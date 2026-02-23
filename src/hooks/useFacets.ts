@@ -3,7 +3,7 @@ import { fetchFacets } from '../api/sagaApi'
 import { type Facet } from '../types'
 
 export const useFacets = () => {
-  const [facets, setFacets] = useState<Facet[]>()
+  const [facets, setFacets] = useState<Facet[]>([])
   const [facetsLoading, setFacetsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string>('')
 

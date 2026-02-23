@@ -3,6 +3,7 @@ import ProductCard from "../ProductCard/ProductCard"
 import ProductListSkeleton from "./ProductListSkeleton"
 import type { Product } from "../../types"
 import styles from './ProductList.module.css'
+import Alert from "../Alert/Alert"
 
 type ProductListProps = {
   holidayType: string,
@@ -10,9 +11,10 @@ type ProductListProps = {
 }
 
 const ProductList = ({ holidayType, productType }: ProductListProps) => {
-  const { products, loading } = useProducts(holidayType, productType)
+  const { products, loading, error } = useProducts(holidayType, productType)
     
   if (loading) return <ProductListSkeleton />
+  if (error) return <Alert error={error} />
 
   return (
     <div className={styles.productListContainer}>

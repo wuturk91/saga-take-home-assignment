@@ -1,0 +1,14 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.headerHeading {
+  /* margin-left: 20px; */
+}
+
+.facetWrapper {
+  /* margin-right: 20px; */
+}

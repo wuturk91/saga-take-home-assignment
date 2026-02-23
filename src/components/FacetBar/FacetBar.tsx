@@ -1,7 +1,7 @@
 import type { Facet } from '../../types'
 import styles from './FacetBar.module.css'
 
-type FilterBarProps = {
+type FacetBarProps = {
   facets: Facet[],
   selectedHolidayType: string,
   selectedProductType: string,
@@ -9,13 +9,13 @@ type FilterBarProps = {
   onProductChange: (value: string) => void,
 }
 
-const FilterBar = ({
+const FacetBar = ({
   facets,
   selectedHolidayType,
   selectedProductType,
   onHolidayChange,
   onProductChange
-}: FilterBarProps) => {
+}: FacetBarProps) => {
   const holidayFacet = facets.find((facet) => facet.key === 'HolidayType')
   const productFacet = facets.find((facet) => facet.key === 'ProductType')
 
@@ -58,4 +58,4 @@ const FilterBar = ({
   )
 }
 
-export default FilterBar
+export default FacetBar

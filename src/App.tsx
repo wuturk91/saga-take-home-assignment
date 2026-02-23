@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { useProducts } from './hooks/useProducts'
 import { useFacets } from './hooks/useFacets'
 
-import FilterBar from './components/FilterBar'
+import FilterBar from './components/FacetBar'
 
 import type { Product } from './types'
 
@@ -13,7 +13,7 @@ function App() {
   const [holidayType, setHolidayType] = useState<string>('')
   const [productType, setProductType] = useState<string>('')
 
-  const { results, loading } = useProducts()
+  const { results, loading } = useProducts(holidayType, productType)
   const { facets, facetsLoading } = useFacets()
 
   if (loading || facetsLoading) return <p>Loading products...</p>

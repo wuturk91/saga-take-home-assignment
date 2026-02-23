@@ -9,8 +9,6 @@ export const fetchProducts = async (holidayType: string, productType: string) =>
     url = `${url}?${params.toString()}`
   }
 
-  console.log('url', url)
-
   try {
     const response: Response = await fetch(url)
     if (!response.ok) throw new Error('Failed to fetch products')

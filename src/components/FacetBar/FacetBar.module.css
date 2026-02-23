@@ -1,0 +1,21 @@
+.facetNav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.facetContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.facetLabel {
+  font-weight: 700;
+}
+
+.facetSelect {
+  border-radius: 10px;
+  padding: 0 10px;
+}

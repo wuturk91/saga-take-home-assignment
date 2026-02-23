@@ -1,4 +1,5 @@
-import type { Facet } from "../types"
+import type { Facet } from '../../types'
+import styles from './FacetBar.module.css'
 
 type FilterBarProps = {
   facets: Facet[],
@@ -19,11 +20,12 @@ const FilterBar = ({
   const productFacet = facets.find((facet) => facet.key === 'ProductType')
 
   return (
-    <nav>
-      <div>
-        <label htmlFor='holiday'>Holiday Type</label>
+    <nav className={styles.facetNav}>
+      <div className={styles.facetContainer}>
+        <label htmlFor='holiday' className={styles.facetLabel}>Holiday Type:</label>
         <select
           id='holiday'
+          className={styles.facetSelect}
           value={selectedHolidayType}
           onChange={(e) => onHolidayChange(e.target.value)}
         >
@@ -36,10 +38,11 @@ const FilterBar = ({
         </select>
       </div>
 
-      <div>
-        <label htmlFor='product'>Product Type</label>
+      <div className={styles.facetContainer}>
+        <label htmlFor='product' className={styles.facetLabel}>Product Type:</label>
         <select
           id='product'
+          className={styles.facetSelect}
           value={selectedProductType}
           onChange={(e) => onProductChange(e.target.value)}
         >

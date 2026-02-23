@@ -1,13 +1,15 @@
 export const fetchProducts = async (holidayType: string, productType: string) => {
-  let url: string = 'api/search/products'
+  let url: string = '/api/search/products'
   const params = new URLSearchParams()
 
-  if(holidayType) params.append('holidaysTypes', holidayType)
+  if(holidayType) params.append('holidayTypes', holidayType)
   if(productType) params.append('productTypes', productType)
 
   if (params.toString()) {
     url = `${url}?${params.toString()}`
   }
+
+  console.log('url', url)
 
   try {
     const response: Response = await fetch(url)
@@ -20,7 +22,7 @@ export const fetchProducts = async (holidayType: string, productType: string) =>
 }
 
 export const fetchFacets = async () => {
-  const url: string = 'api/search/facets'
+  const url: string = '/api/search/facets'
 
   try {
     const response: Response = await fetch(url)

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { useProducts } from './hooks/useProducts'
 import { useFacets } from './hooks/useFacets'

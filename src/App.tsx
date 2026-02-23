@@ -9,6 +9,7 @@ import type { Product } from './types'
 
 import './App.css'
 import ProductCard from './components/ProductCard/ProductCard'
+import ProductList from './components/ProductList/ProductList'
 
 function App() {
   const [holidayType, setHolidayType] = useState<string>('')
@@ -32,9 +33,7 @@ function App() {
         />
       }
       
-      {results.map((result: Product) => (
-        <ProductCard product={result} />
-      ))}
+      <ProductList products={results} />
     </div>
   )
 }

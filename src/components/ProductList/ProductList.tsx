@@ -18,6 +18,11 @@ const ProductList = ({ holidayType, productType }: ProductListProps) => {
 
   return (
     <div className={styles.productListContainer}>
+      {products.length === 0 &&
+        <div className={styles.noProductsContainer}>
+          <h2>No products to show - please alter your search</h2>
+        </div>
+      }
       {products.map((product: Product) => (
         <ProductCard product={product} key={product.id} />
       ))}

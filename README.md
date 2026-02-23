@@ -47,3 +47,9 @@ The app will be available at [http://localhost:5173](http://localhost:5173) by d
 ## If I Had More Time
 - I wanted to complete the project within a reasonable timeframe. For this reason I was unable to complete all of the optionals.
 - Given more time I would have added unit tests using React Testing Library and attempted pagination.
+
+## Additional Notes
+- After further testing once I completed the work, I noticed that there was some minor improvements that should and could be made, and I took the liberty of adding these for better UX. Listing them here for transparency:
+   - Filter Params: Filters were not being added in params. An oversight which meant that filters were lost when a refresh occurred and deep linking would not work if a user shared a link with another. Due to time and again to avoid another dependency on a simple app (React Router), I decided to use History API and pass through params to the URL whenever a filter changed.
+   - Responsiveness of product cards: When going through my work and viewing the products and testing responsiveness, I noticed that ProductCards that had words that were long, like 'circumnavigation' would break the layout and cause the card to look off. For this reason I made a quick decision to alter the font-size.
+   - I also removed the count from the facet dropdowns as they were confusing when seeing no results after combining filters.

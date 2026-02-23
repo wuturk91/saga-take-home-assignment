@@ -7,6 +7,14 @@ export const useProducts = (holidayType: string, productType: string) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string>('')
 
+  const updateUrl = (holidayType: string, productType: string) => {
+    console.log('called')
+    const params = new URLSearchParams()
+    if (holidayType) params.set('holidayType', holidayType)
+    if (productType) params.set('productType', productType)
+    if (params.toString()) window.history.replaceState({}, '', `?${params.toString()}`)
+  }
+
   useEffect(() => {
     setError('')
     fetchProducts(holidayType, productType)
@@ -17,6 +25,7 @@ export const useProducts = (holidayType: string, productType: string) => {
         } else {
           setProducts(result)
           setLoading(false)
+          updateUrl(holidayType, productType)
         }
       })
   }, [holidayType, productType])

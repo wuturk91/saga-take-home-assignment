@@ -5,15 +5,22 @@ import { type Facet } from '../types'
 export const useFacets = () => {
   const [facets, setFacets] = useState<Facet[]>()
   const [facetsLoading, setFacetsLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string>('')
 
   useEffect(() => {
+    setError('')
     fetchFacets()
       .then(result => {
-        const limitedFacets: Facet[] = result.filter((facet: Facet) => facet.key === 'HolidayType' || facet.key === 'ProductType')
-        setFacets(limitedFacets)
-        setFacetsLoading(false)
+        if (result && result.error) {
+          setError(result.error)
+          setFacets([])
+        } else {
+          const limitedFacets: Facet[] = result.filter((facet: Facet) => facet.key === 'HolidayType' || facet.key === 'ProductType')
+          setFacets(limitedFacets)
+          setFacetsLoading(false)
+        }
       })
   }, [])
 
-  return { facets, facetsLoading }
+  return { facets, facetsLoading, error }
 }

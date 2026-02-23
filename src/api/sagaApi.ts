@@ -15,7 +15,10 @@ export const fetchProducts = async (holidayType: string, productType: string) =>
     const { results } = await response.json()
     return results
   } catch (error) {
-    // handle error with log and return error message
+    console.error(error)
+    return {
+      error: error instanceof Error ? error.message : 'Failed to fetch products'
+    }
   }
 }
 
@@ -28,6 +31,9 @@ export const fetchFacets = async () => {
     const { facets } = await response.json()
     return facets
   } catch (error) {
-    // handle error with log and return error message
+    console.error(error)
+    return {
+      error: error instanceof Error ? error.message : 'Failed to fetch facets'
+    }
   }
 }

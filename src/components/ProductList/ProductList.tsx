@@ -10,14 +10,14 @@ type ProductListProps = {
 }
 
 const ProductList = ({ holidayType, productType }: ProductListProps) => {
-  const { results, loading } = useProducts(holidayType, productType)
+  const { products, loading } = useProducts(holidayType, productType)
     
   if (loading) return <ProductListSkeleton />
 
   return (
     <div className={styles.productListContainer}>
-      {results.map((result: Product) => (
-        <ProductCard product={result} />
+      {products.map((product: Product) => (
+        <ProductCard product={product} />
       ))}
     </div>
   )

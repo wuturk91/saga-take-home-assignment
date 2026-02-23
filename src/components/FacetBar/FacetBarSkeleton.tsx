@@ -10,6 +10,7 @@ const FacetBarSkeleton = () => {
           className={styles.facetSelect}
           defaultValue='All Holiday Types'
         >
+          <option>All Holiday Types</option>
         </select>
       </div>
 
@@ -20,6 +21,7 @@ const FacetBarSkeleton = () => {
           className={styles.facetSelect}
           defaultValue='All Product Types'
         >
+          <option>All Product Types</option>
         </select>
       </div>
     </nav>

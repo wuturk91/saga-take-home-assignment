@@ -4,7 +4,7 @@ const ProductCardSkeleton = () => {
   return (
     <div className={styles.productCardContainer}>
       <div
-        className={styles.productCardImage}
+        className={styles.productCardImageSkeleton}
       ></div>
       <div className={styles.productCardInfo}>
       </div>

@@ -32,7 +32,7 @@ const FacetBar = ({
           <option value=''>All Holiday Types</option>
           {holidayFacet?.items.map((item) => (
             <option key={item.key} value={item.key}>
-              {item.key} - {item.count}
+              {item.key}
             </option>
           ))}
         </select>
@@ -49,7 +49,7 @@ const FacetBar = ({
           <option value=''>All Product Types</option>
           {productFacet?.items.map((item) => (
             <option key={item.key} value={item.key}>
-              {item.key} - {item.count}
+              {item.key}
             </option>
           ))}
         </select>

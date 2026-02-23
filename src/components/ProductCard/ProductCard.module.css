@@ -4,6 +4,7 @@
   width: 100%;
   box-sizing: border-box;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height: 400px;
 }
 
 .productCardImage {
@@ -34,7 +35,7 @@
 .productName {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: bold;
   color: black;
 }
@@ -65,4 +66,14 @@
   margin-top: 0;
   color: black;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .productCardImage {
+    width: 200px;
+  }
+
+  .productName {
+    font-size: 20px;
+  }
 }

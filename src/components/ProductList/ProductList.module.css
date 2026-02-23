@@ -8,3 +8,9 @@
 .noProductsContainer {
   margin: 100px auto;
 }
+
+@media (max-width: 768px) {
+  .productListContainer {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}

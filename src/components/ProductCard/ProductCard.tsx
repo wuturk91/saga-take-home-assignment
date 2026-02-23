@@ -7,7 +7,7 @@ type ProductCardProps = {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div className={styles.productCardContainer} key={product.id}>
+    <div className={styles.productCardContainer}>
       <img
         className={styles.productCardImage}
         src={product.images[0].filename}

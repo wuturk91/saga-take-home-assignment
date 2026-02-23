@@ -17,7 +17,7 @@ const ProductList = ({ holidayType, productType }: ProductListProps) => {
   return (
     <div className={styles.productListContainer}>
       {products.map((product: Product) => (
-        <ProductCard product={product} />
+        <ProductCard product={product} key={product.id} />
       ))}
     </div>
   )

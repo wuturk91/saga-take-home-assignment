@@ -17,7 +17,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <p className={styles.productName}>{product.name}</p>
         {product.departure.bookingStatus === "SoldOut"
           ? <p className={styles.productPrice}>Sold Out</p>
-          : <p className={styles.productPrice}>Total Price: £{product.departure.groupPrice.price}</p>
+          : <p className={styles.productPrice}>Total Price: £{product.departure.singlePrice.price}</p>
         }
       </div>
     </div>

@@ -24,7 +24,7 @@ const Header = ({
       <h1 className={styles.headerHeading}>Saga Holidays</h1>
       <div className={styles.facetWrapper}>
         {facetsLoading && !error && <FacetBarSkeleton />}
-        {true && <Alert error={error} />}
+        {error && <Alert error={error} />}
         {!facetsLoading && !error && facets &&
           <FacetBar
             facets={facets}

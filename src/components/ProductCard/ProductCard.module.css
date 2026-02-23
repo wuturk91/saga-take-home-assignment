@@ -32,12 +32,37 @@
 }
 
 .productName {
-  margin-top: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 26px;
+  font-weight: bold;
   color: black;
+}
+
+.productBoard {
+  margin-top: 0;
+  font-style: italic;
+  color: black;
+}
+
+.dateWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateText {
+  margin: 0;
+  color: black
+}
+
+.priceType {
+  color: black;
+  margin-bottom: 0;
 }
 
 .productPrice {
   font-size: 18px;
+  margin-top: 0;
   color: black;
+  font-weight: bold;
 }

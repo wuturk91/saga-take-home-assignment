@@ -21,8 +21,10 @@ export interface Product {
     groupPrice: Price;
     singlePrice: Price;
     metaData: {
-      days: number;
+      boardBasis: string;
+      duration: number;
       nights: number;
+      solo: boolean;
     }
     bookingStatus: string
   }

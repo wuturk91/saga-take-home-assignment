@@ -5,10 +5,12 @@
   align-items: baseline;
 }
 
-.headerHeading {
-  /* margin-left: 20px; */
-}
+@media (max-width: 1090px) {
+  .headerContainer {
+    flex-direction: column;
+  }
 
-.facetWrapper {
-  /* margin-right: 20px; */
+  .headerHeading {
+    margin-bottom: 0;
+  }
 }

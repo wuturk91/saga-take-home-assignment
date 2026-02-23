@@ -24,6 +24,7 @@ export interface Product {
       days: number;
       nights: number;
     }
+    bookingStatus: string
   }
   holidayTypes: string[];
   productTypes: string[];

@@ -1,15 +1,36 @@
+import { useState } from 'react'
+
 import { useProducts } from './hooks/useProducts'
-import './App.css'
+import { useFacets } from './hooks/useFacets'
+
+import FilterBar from './components/FilterBar'
+
 import type { Product } from './types'
 
-function App() {
-  const { results, loading } = useProducts()
+import './App.css'
 
-  if (loading) return <p>Loading products...</p>
+function App() {
+  const [holidayType, setHolidayType] = useState<string>('')
+  const [productType, setProductType] = useState<string>('')
+
+  const { results, loading } = useProducts()
+  const { facets, facetsLoading } = useFacets()
+
+  if (loading || facetsLoading) return <p>Loading products...</p>
 
   return (
     <div>
       <h1>Holidays</h1>
+      {facets && 
+        <FilterBar
+          facets={facets}
+          selectedHolidayType={holidayType}
+          selectedProductType={productType}
+          onHolidayChange={setHolidayType}
+          onProductChange={setProductType}
+        />
+      }
+      
       {results.map((result: Product) => (
         <div key={result.id}>
           <img src={result.images[0].filename} alt={result.images[0].alt} />

@@ -3,11 +3,12 @@ import { useState } from 'react'
 import { useProducts } from './hooks/useProducts'
 import { useFacets } from './hooks/useFacets'
 
-import FilterBar from './components/FacetBar'
+import FilterBar from './components/FacetBar/FacetBar'
 
 import type { Product } from './types'
 
 import './App.css'
+import ProductCard from './components/ProductCard/ProductCard'
 
 function App() {
   const [holidayType, setHolidayType] = useState<string>('')
@@ -32,11 +33,7 @@ function App() {
       }
       
       {results.map((result: Product) => (
-        <div key={result.id}>
-          <img src={result.images[0].filename} alt={result.images[0].alt} />
-          <p>{result.name}</p>
-          <p>Total Price: £{result.departure.groupPrice.price}</p>
-        </div>
+        <ProductCard product={result} />
       ))}
     </div>
   )

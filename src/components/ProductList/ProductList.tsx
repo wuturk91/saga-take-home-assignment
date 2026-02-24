@@ -1,4 +1,5 @@
 import { useProducts } from "../../hooks/useProducts"
+import NoProductsContainer from "../NoProductsContainer/NoProductsContainer"
 import ProductCard from "../ProductCard/ProductCard"
 import ProductListSkeleton from "./ProductListSkeleton"
 import type { Product } from "../../types"
@@ -6,8 +7,8 @@ import styles from './ProductList.module.css'
 import Alert from "../Alert/Alert"
 
 type ProductListProps = {
-  holidayType: string,
-  productType: string
+  holidayType: string;
+  productType: string;
 }
 
 const ProductList = ({ holidayType, productType }: ProductListProps) => {
@@ -19,9 +20,7 @@ const ProductList = ({ holidayType, productType }: ProductListProps) => {
   return (
     <div className={styles.productListContainer}>
       {products.length === 0 &&
-        <div className={styles.noProductsContainer}>
-          <h2>No products to show - please alter your search</h2>
-        </div>
+        <NoProductsContainer />
       }
       {products.map((product: Product) => (
         <ProductCard product={product} key={product.id} />

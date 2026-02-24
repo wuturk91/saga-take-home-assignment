@@ -1,0 +1,19 @@
+.noProductsContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+}
+
+.noProductsContainerButton {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1db4e7;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  &:hover {
+    background-color: #127798;
+    cursor: pointer;
+  }
+}

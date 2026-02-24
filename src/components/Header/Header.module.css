@@ -5,6 +5,11 @@
   align-items: baseline;
 }
 
+.headerHeading {
+    color: #ffffff;
+    font-size: 40px;
+  }
+
 @media (max-width: 1090px) {
   .headerContainer {
     flex-direction: column;

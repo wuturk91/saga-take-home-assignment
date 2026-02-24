@@ -26,14 +26,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div>
           <p className={styles.productCardName}>{product.name}</p>
           <p className={styles.productCardDestinations}>{product.destinations.join(' | ')}</p>
-          <ul>
-            {product.metaData.meals.length &&
-              <li className={styles.productCardMeals}>{product.metaData.meals[0].replace(':', '')} Included</li>
-            }
-            {product.metaData.numberOfExcursions > 0 &&
-              <li className={styles.productCardMeals}>{product.metaData.numberOfExcursions} Excursions</li>
-            }
-          </ul>
+          {(product.metaData.meals.length > 0 || product.metaData.numberOfExcursions > 0) && (
+            <ul>
+              {product.metaData.meals.length > 0 &&
+                <li>{product.metaData.meals[0].replace(':', '')} Included</li>
+              }
+              {product.metaData.numberOfExcursions > 0 &&
+                <li>{product.metaData.numberOfExcursions} Excursions</li>
+              }
+            </ul>
+          )}
         </div>
         <div className={styles.productCardFooter}>
           <div className={styles.productCardPriceContainer}>

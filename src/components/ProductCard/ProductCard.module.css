@@ -1,24 +1,24 @@
 .productCardContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  height: 400px;
+  /* box-sizing: border-box; */
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.08); */
+  /* height: 450px; */
+  /* max-width: 600px; */
+}
+
+.productCardImageContainer {
+  min-width: 500px;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 .productCardImage {
-  width: 250px;
-  height: auto;
-  border-radius: 10px 0 0 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
   object-fit: cover;
-}
-
-.productCardImageSkeleton {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px 0 0 10px;
-  background-color: grey;
 }
 
 .productCardInfo {
@@ -29,10 +29,10 @@
   flex: 1 1 0;
   padding: 6px 20px;
   background-color: white;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0 10px 10px;
 }
 
-.productName {
+.productCardName {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 22px;
@@ -40,39 +40,98 @@
   color: black;
 }
 
-.productBoard {
+.productCardDestinations {
+  margin-top: 0;
+  color: black;
+}
+
+.productCardMeals {
+  color: black;
+}
+
+.accommodationSummary {
+  color: black;
+}
+
+.productCardBoard {
   margin-top: 0;
   font-style: italic;
   color: black;
 }
 
-.dateWrapper {
+.productCardFooter {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.productCardPriceContainer {
   display: flex;
   flex-direction: column;
 }
 
-.dateText {
+.productCardDateText {
   margin: 0;
   color: black
 }
 
-.priceType {
-  color: black;
-  margin-bottom: 0;
+.productCardPriceWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
 }
 
-.productPrice {
-  font-size: 18px;
-  margin-top: 0;
+.productCardPrice {
+  font-size: 20px;
+  margin: 0;
   color: black;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .productCardImage {
-    width: 200px;
-  }
+.productCardWasPrice {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  text-decoration: line-through;
+}
 
+.productCardButton {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1db4e7;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  &:hover {
+    background-color: #127798;
+    cursor: pointer;
+  }
+}
+
+.productCardImageSkeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: grey;
+}
+
+.productCardInfoSkeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1 1 0;
+  padding: 6px 20px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  min-height: 182px;
+}
+
+@media (max-width: 768px) {
   .productName {
     font-size: 20px;
   }

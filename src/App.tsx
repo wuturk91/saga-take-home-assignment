@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageContainer from './Layouts/PageContainer'
 import Header from './components/Header/Header'
+import FacetBar from './components/FacetBar/FacetBar'
 import ProductList from './components/ProductList/ProductList'
 
 function App() {
@@ -12,13 +13,13 @@ function App() {
 
   return (
     <PageContainer>
-      <Header
-        holidayType={holidayType}
-        setHolidayType={setHolidayType}
-        productType={productType}
-        setProductType={setProductType}
+      <Header />
+      <FacetBar
+        selectedHolidayType={holidayType}
+        selectedProductType={productType}
+        onHolidayChange={setHolidayType}
+        onProductChange={setProductType}
       />
-      
       <ProductList
         holidayType={holidayType}
         productType={productType}

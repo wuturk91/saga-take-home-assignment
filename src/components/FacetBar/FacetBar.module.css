@@ -1,15 +1,19 @@
-.facetNav {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  padding: 20px 0;
-}
-
 .facetContainer {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  padding: 20px 0;
+  background: #242424;
+  border-bottom: 1px solid #ffffff29;
+}
+
+.facetWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 
 .facetLabel {
@@ -17,13 +21,34 @@
 }
 
 .facetSelect {
-  border-radius: 10px;
-  padding: 0 10px;
-  width: 180px;
+  border-radius: 40px;
+  padding: 15px;
+  width: 190px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-@media (max-width: 860px) {
-  .facetNav {
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  gap: 5px;
+}
+
+@media (max-width: 880px) {
+  .facetContainer {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inputWrapper {
+    margin-top: 30px;
+    margin-left: 0;
+    gap: 10px;
+    & input {
+      margin: 0;
+    }
   }
 }

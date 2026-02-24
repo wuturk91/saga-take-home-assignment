@@ -1,30 +1,41 @@
+import { useFacets } from '../../hooks/useFacets'
+import FacetBarSkeleton from './FacetBarSkeleton'
+import Alert from '../Alert/Alert'
 import type { Facet } from '../../types'
 import styles from './FacetBar.module.css'
 
 type FacetBarProps = {
-  facets: Facet[],
-  selectedHolidayType: string,
-  selectedProductType: string,
-  onHolidayChange: (value: string) => void,
-  onProductChange: (value: string) => void,
+  selectedHolidayType: string;
+  selectedProductType: string;
+  onHolidayChange: (value: string) => void;
+  onProductChange: (value: string) => void;
 }
 
 const FacetBar = ({
-  facets,
   selectedHolidayType,
   selectedProductType,
   onHolidayChange,
   onProductChange
 }: FacetBarProps) => {
-  const holidayFacet = facets.find((facet) => facet.key === 'HolidayType')
-  const productFacet = facets.find((facet) => facet.key === 'ProductType')
+  const { facets, facetsLoading, error } = useFacets()
+
+  const holidayFacet = facets.find((facet: Facet) => facet.key === 'HolidayType')
+  const productFacet = facets.find((facet: Facet) => facet.key === 'ProductType')
+
+  if (facetsLoading) return (
+    <FacetBarSkeleton
+      selectedHolidayType={selectedHolidayType}
+      selectedProductType={selectedProductType}
+    />
+  )
+  if (error) return <Alert error={error} />
 
   return (
-    <nav className={styles.facetNav}>
-      <div className={styles.facetContainer}>
-        <label htmlFor='holiday' className={styles.facetLabel}>Holiday Type:</label>
+    <div className={styles.facetContainer}>
+      <div className={styles.facetWrapper}>
+        <span className={styles.facetLabel}>Filter By:</span>
         <select
-          id='holiday'
+          name="Holiday Type"
           className={styles.facetSelect}
           value={selectedHolidayType}
           onChange={(e) => onHolidayChange(e.target.value)}
@@ -36,12 +47,9 @@ const FacetBar = ({
             </option>
           ))}
         </select>
-      </div>
 
-      <div className={styles.facetContainer}>
-        <label htmlFor='product' className={styles.facetLabel}>Product Type:</label>
         <select
-          id='product'
+          name="Product Type"
           className={styles.facetSelect}
           value={selectedProductType}
           onChange={(e) => onProductChange(e.target.value)}
@@ -54,7 +62,7 @@ const FacetBar = ({
           ))}
         </select>
       </div>
-    </nav>
+    </div>
   )
 }
 

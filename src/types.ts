@@ -3,7 +3,8 @@ type Image = {
   filename: string
 }
 
-type Price = {
+export type Price = {
+  wasPrice: number;
   price: number;
   currencyCode: string;
 }
@@ -26,8 +27,13 @@ export interface Product {
       nights: number;
       solo: boolean;
     }
-    bookingStatus: string
+    bookingStatus: string;
+  },
+  metaData: {
+    meals: string;
+    numberOfExcursions: number;
   }
+  destinations: string[];
   holidayTypes: string[];
   productTypes: string[];
 }

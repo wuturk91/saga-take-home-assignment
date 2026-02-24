@@ -1,6 +1,8 @@
 .alertContainer {
   padding: 10px;
-  border: 1px solid red;
+  border: 1px solid #ff0000;
   border-radius: 10px;
-  color: red;
+  background-color: #ffffff;
+  color: #ff0000;
+  width: fit-content;
 }

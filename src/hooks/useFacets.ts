@@ -9,6 +9,7 @@ export const useFacets = () => {
 
   useEffect(() => {
     setError('')
+    setFacetsLoading(true)
     fetchFacets()
       .then(result => {
         if (result && result.error) {

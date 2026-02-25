@@ -7,13 +7,13 @@
 .noProductsContainerButton {
   padding: 10px;
   border-radius: 5px;
-  background-color: #1db4e7;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-size: 18px;
   font-weight: bold;
   border: none;
   &:hover {
-    background-color: #127798;
+    background-color: #ececec;
     cursor: pointer;
   }
 }

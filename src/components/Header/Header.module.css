@@ -6,9 +6,10 @@
 }
 
 .headerHeading {
-    color: #ffffff;
-    font-size: 40px;
-  }
+  font-size: 60px;
+  margin: 20px 0;
+  color: #ffffff;
+}
 
 @media (max-width: 1090px) {
   .headerContainer {

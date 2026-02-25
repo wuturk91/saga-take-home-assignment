@@ -1,4 +1,4 @@
-import ProductCardSkeleton from "../ProductCard/ProductCardSkeleton"
+import ProductCardSkeleton from '../ProductCard/ProductCardSkeleton'
 import styles from './ProductList.module.css'
 
 const ProductListSkeleton = () => {

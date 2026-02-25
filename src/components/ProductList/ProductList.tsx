@@ -1,11 +1,11 @@
-import { useEffect } from "react"
-import { useProducts } from "../../hooks/useProducts"
-import NoProductsContainer from "../NoProductsContainer/NoProductsContainer"
-import ProductCard from "../ProductCard/ProductCard"
-import ProductListSkeleton from "./ProductListSkeleton"
-import type { Product } from "../../types"
+import { useEffect } from 'react'
+import { useProducts } from '../../hooks/useProducts'
+import NoProductsContainer from '../NoProductsContainer/NoProductsContainer'
+import ProductCard from '../ProductCard/ProductCard'
+import ProductListSkeleton from './ProductListSkeleton'
+import type { Product } from '../../types'
 import styles from './ProductList.module.css'
-import Alert from "../Alert/Alert"
+import Alert from '../Alert/Alert'
 
 type ProductListProps = {
   holidayType: string;

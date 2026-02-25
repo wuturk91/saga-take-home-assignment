@@ -6,7 +6,7 @@ type AlertProps = {
 
 const Alert = ({ error }: AlertProps) => {
   return (
-    <div className={styles.alertContainer}>
+    <div role='alert' className={styles.alertContainer}>
       {error}
     </div>
   )

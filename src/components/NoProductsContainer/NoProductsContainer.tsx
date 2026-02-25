@@ -6,6 +6,7 @@ const NoProductsContainer = () => {
       <h2>No holidays match your filters - please alter or restart your search</h2>
       <button
         type='button'
+        aria-label='Reset search'
         className={styles.noProductsContainerButton}
         onClick={() => {
           window.location.href = 'http://localhost:5173';

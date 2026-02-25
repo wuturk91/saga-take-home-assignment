@@ -1,4 +1,4 @@
-import type { Product, Price } from "../../types"
+import type { Product, Price } from '../../types'
 import styles from './ProductCard.module.css'
 
 type ProductCardProps = {
@@ -47,6 +47,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
           <button
             type='button'
+            aria-label='View product details'
             className={styles.productCardButton}
           >
             View Details

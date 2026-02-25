@@ -37,7 +37,8 @@ const FacetBar = ({
       <div className={styles.facetWrapper}>
         <span className={styles.facetLabel}>Filter By:</span>
         <select
-          name="Holiday Type"
+          name='Holiday Type'
+          aria-label='Select holiday type'
           className={styles.facetSelect}
           value={selectedHolidayType}
           onChange={(e) => onHolidayChange(e.target.value)}
@@ -51,7 +52,8 @@ const FacetBar = ({
         </select>
 
         <select
-          name="Product Type"
+          name='Product Type'
+          aria-label='Select product type'
           className={styles.facetSelect}
           value={selectedProductType}
           onChange={(e) => onProductChange(e.target.value)}

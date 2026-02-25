@@ -9,13 +9,15 @@ type FacetBarProps = {
   selectedProductType: string;
   onHolidayChange: (value: string) => void;
   onProductChange: (value: string) => void;
+  productCount: string;
 }
 
 const FacetBar = ({
   selectedHolidayType,
   selectedProductType,
   onHolidayChange,
-  onProductChange
+  onProductChange,
+  productCount
 }: FacetBarProps) => {
   const { facets, facetsLoading, error } = useFacets()
 
@@ -62,6 +64,7 @@ const FacetBar = ({
           ))}
         </select>
       </div>
+      <span className={styles.productCount}>Holidays Found: {productCount}</span>
     </div>
   )
 }

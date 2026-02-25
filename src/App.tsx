@@ -10,6 +10,7 @@ function App() {
   const initialProductType = params.get('productType') || ''
   const [holidayType, setHolidayType] = useState<string>(initialHolidayType)
   const [productType, setProductType] = useState<string>(initialProductType)
+  const [productCount, setProductCount] = useState<string>('')
 
   return (
     <PageContainer>
@@ -19,10 +20,12 @@ function App() {
         selectedProductType={productType}
         onHolidayChange={setHolidayType}
         onProductChange={setProductType}
+        productCount={productCount}
       />
       <ProductList
         holidayType={holidayType}
         productType={productType}
+        setProductCount={setProductCount}
       />
     </PageContainer>
   )

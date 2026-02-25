@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0px;
   padding: 20px 0;
   background: #1db4e7;
-  border-bottom: 1px solid #ffffff29;
+  border-bottom: 4px solid #ffffff29;
 }
 
 .facetWrapper {
@@ -24,8 +25,9 @@
 .facetSelect {
   border-radius: 40px;
   padding: 15px;
-  width: 190px;
+  width: 220px;
   border: none;
+  font-size: 16px;
   &:hover {
     cursor: pointer;
   }
@@ -38,18 +40,27 @@
   gap: 5px;
 }
 
-@media (max-width: 880px) {
+.productCount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+@media (max-width: 960px) {
   .facetContainer {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: unset;
   }
 
-  .inputWrapper {
-    margin-top: 30px;
-    margin-left: 0;
-    gap: 10px;
-    & input {
-      margin: 0;
-    }
+  .productCount {
+    margin-top: 20px;
+  }
+
+  .facetSelect {
+    width: 190px;
+    padding: 10px;
+    font-size: 14px;
   }
 }
